@@ -2,17 +2,19 @@ package com.whitecloak.orikamapper.mapper.impl;
 
 import com.whitecloak.orikamapper.entity.SourceEntity;
 import com.whitecloak.orikamapper.model.Source;
-import lombok.extern.slf4j.Slf4j;
+import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
-import org.mockito.junit.MockitoJUnitRunner;
+import org.mockito.MockitoAnnotations;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@Slf4j
-@RunWith(MockitoJUnitRunner.class)
 public class SourceMapperImplTests {
+
+    @Before
+    public void setUp() throws Exception {
+        MockitoAnnotations.initMocks(this);
+    }
 
     @InjectMocks
     SourceMapperImpl sourceMapper;
