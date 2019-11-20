@@ -1,7 +1,6 @@
 package com.whitecloak.orikamapper.mapper.impl;
 
 import com.whitecloak.orikamapper.entity.SourceEntity;
-import com.whitecloak.orikamapper.mapper.SourceMapperImpl;
 import com.whitecloak.orikamapper.model.Source;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
@@ -30,7 +29,7 @@ public class SourceMapperImplTests {
         sourceEntity.setName("Errolito");
         sourceEntity.setAge(9);
 
-        Source source = sourceMapper.map(sourceEntity);
+        Source source = sourceMapper.mapEntityToModel(sourceEntity);
 
         assertEquals(source, new Source(
                 "Errolito",
@@ -44,7 +43,7 @@ public class SourceMapperImplTests {
         source.setName("Errolito");
         source.setAge(9);
 
-        SourceEntity sourceEntity = sourceMapper.map(source);
+        SourceEntity sourceEntity = sourceMapper.mapModelToEntity(source);
 
         assertEquals(sourceEntity, new SourceEntity(
                 "Errolito",
