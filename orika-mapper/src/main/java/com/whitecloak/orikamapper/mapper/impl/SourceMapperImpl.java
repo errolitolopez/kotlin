@@ -1,7 +1,7 @@
-package com.whitecloak.orikamapper.mapper;
+package com.whitecloak.orikamapper.mapper.impl;
 
 import com.whitecloak.orikamapper.entity.SourceEntity;
-import com.whitecloak.orikamapper.mapper.impl.SourceMapper;
+import com.whitecloak.orikamapper.mapper.SourceMapper;
 import com.whitecloak.orikamapper.model.Source;
 import ma.glasnost.orika.MapperFactory;
 import ma.glasnost.orika.impl.DefaultMapperFactory;
@@ -18,7 +18,7 @@ public class SourceMapperImpl implements SourceMapper {
     }
 
     @Override
-    public Source map(SourceEntity sourceEntity) {
+    public Source mapEntityToModel(SourceEntity sourceEntity) {
         return mapperFactory
                 .getMapperFacade()
                 .map(sourceEntity, Source.class);
@@ -26,7 +26,7 @@ public class SourceMapperImpl implements SourceMapper {
     }
 
     @Override
-    public SourceEntity map(Source source) {
+    public SourceEntity mapModelToEntity(Source source) {
         return mapperFactory
                 .getMapperFacade()
                 .map(source, SourceEntity.class);
