@@ -1,6 +1,7 @@
-package com.whitecloak.orikamapper.mapper;
+package com.whitecloak.orikamapper.mapper.impl;
 
 import com.whitecloak.orikamapper.entity.SourceEntity;
+import com.whitecloak.orikamapper.mapper.SourceMapperImpl;
 import com.whitecloak.orikamapper.model.Source;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
