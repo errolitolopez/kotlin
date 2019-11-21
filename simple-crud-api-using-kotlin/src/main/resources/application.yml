@@ -4,3 +4,6 @@ spring:
       host: localhost
       port: 27017
       database: quotes_db
+
+server:
+  port: 2363
