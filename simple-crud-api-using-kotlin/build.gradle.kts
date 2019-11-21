@@ -35,6 +35,7 @@ dependencies {
 
 	implementation ("io.springfox:springfox-swagger2:2.9.2")
 	implementation ("io.springfox:springfox-swagger-ui:2.9.2")
+	implementation ( "org.slf4j:slf4j-api:1.7.5")
 }
 
 tasks.withType<Test> {
