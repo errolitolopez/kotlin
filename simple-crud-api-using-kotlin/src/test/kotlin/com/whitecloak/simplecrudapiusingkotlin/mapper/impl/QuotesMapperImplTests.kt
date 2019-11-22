@@ -11,7 +11,6 @@ import org.junit.Test
 import org.mockito.InjectMocks
 import org.mockito.MockitoAnnotations
 import org.slf4j.LoggerFactory
-import java.util.UUID
 
 class QuotesMapperImplTests {
 
@@ -27,15 +26,14 @@ class QuotesMapperImplTests {
 
     @Test
     fun mapModelToEntity_whenQuotesIsGiven_thenCorrect() {
-        val quotesId = UUID.randomUUID()
 
         val actual = Quotes()
-        actual._id = quotesId
+        actual._id = "123"
         actual.author = "Errolito Lopez"
         actual.body = "It is a fantastic energy, sir."
 
         val expected = QuotesEntity()
-        expected._id = quotesId
+        expected._id = "123"
         expected.author = "Errolito Lopez"
         expected.body = "It is a fantastic energy, sir."
         assertEquals(expected, quotesMapperImpl.mapModelToEntity(actual))
@@ -43,15 +41,14 @@ class QuotesMapperImplTests {
 
     @Test
     fun mapEntityToModel_whenQuotesEntityIsGiven_thenCorrect() {
-        val quotesId = UUID.randomUUID()
 
         val actual = QuotesEntity()
-        actual._id = quotesId
+        actual._id = "123"
         actual.author = "Errolito Lopez"
         actual.body = "It is a fantastic energy, sir."
 
         val expected = Quotes()
-        expected._id = quotesId
+        expected._id = "123"
         expected.author = "Errolito Lopez"
         expected.body = "It is a fantastic energy, sir."
         assertEquals(expected, quotesMapperImpl.mapEntityToModel(actual))
@@ -71,10 +68,9 @@ class QuotesMapperImplTests {
 
     @Test
     fun mapModelToResource_whenQuotesIsGiven_thenCorrect() {
-        val quotesId = UUID.randomUUID()
 
         val actual = Quotes()
-        actual._id = quotesId
+        actual._id = "123"
         actual.author = "Errolito Lopez"
         actual.body = "String"
 
