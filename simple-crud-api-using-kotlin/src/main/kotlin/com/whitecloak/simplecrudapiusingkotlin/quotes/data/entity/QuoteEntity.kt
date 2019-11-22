@@ -3,8 +3,8 @@ package com.whitecloak.simplecrudapiusingkotlin.quotes.data.entity
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
 
-@Document("Quotes")
-data class QuotesEntity(
+@Document("Quote")
+data class QuoteEntity(
         @Id
         var _id: String? = null,
         var body: String? = null,
