@@ -30,12 +30,13 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
-		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
+//		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
 	}
 
 	implementation ("io.springfox:springfox-swagger2:2.9.2")
 	implementation ("io.springfox:springfox-swagger-ui:2.9.2")
 	implementation ( "org.slf4j:slf4j-api:1.7.5")
+
 }
 
 tasks.withType<Test> {
