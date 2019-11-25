@@ -1,10 +1,10 @@
 package com.whitecloak.simplecrudapiusingkotlin.mapper.impl
 
-import com.whitecloak.simplecrudapiusingkotlin.quotes.api.request.QuoteForm
-import com.whitecloak.simplecrudapiusingkotlin.quotes.api.response.QuoteResource
-import com.whitecloak.simplecrudapiusingkotlin.quotes.data.entity.QuoteEntity
-import com.whitecloak.simplecrudapiusingkotlin.quotes.data.mapper.impl.QuoteMapperImpl
-import com.whitecloak.simplecrudapiusingkotlin.quotes.domain.model.Quote
+import com.whitecloak.simplecrudapiusingkotlin.quote.api.request.QuoteForm
+import com.whitecloak.simplecrudapiusingkotlin.quote.api.response.QuoteResource
+import com.whitecloak.simplecrudapiusingkotlin.quote.data.entity.QuoteEntity
+import com.whitecloak.simplecrudapiusingkotlin.quote.data.mapper.impl.QuoteMapperImpl
+import com.whitecloak.simplecrudapiusingkotlin.quote.domain.model.Quote
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
@@ -22,11 +22,10 @@ class QuoteMapperImplTests {
     private val log = LoggerFactory.getLogger(QuoteMapperImplTests::class.java)
 
     @InjectMocks
-    val quotesMapperImpl = QuoteMapperImpl()
+    val quoteMapperImpl = QuoteMapperImpl()
 
     @Test
-    fun mapModelToEntity_whenQuotesIsGiven_thenCorrect() {
-
+    fun mapModelToEntity_whenQuoteIsGiven_thenCorrect() {
         val actual = Quote()
         actual._id = "123"
         actual.author = "Errolito Lopez"
@@ -36,12 +35,11 @@ class QuoteMapperImplTests {
         expected._id = "123"
         expected.author = "Errolito Lopez"
         expected.body = "It is a fantastic energy, sir."
-        assertEquals(expected, quotesMapperImpl.mapModelToEntity(actual))
+        assertEquals(expected, quoteMapperImpl.mapModelToEntity(actual))
     }
 
     @Test
-    fun mapEntityToModel_whenQuotesEntityIsGiven_thenCorrect() {
-
+    fun mapEntityToModel_whenQuoteEntityIsGiven_thenCorrect() {
         val actual = QuoteEntity()
         actual._id = "123"
         actual.author = "Errolito Lopez"
@@ -51,24 +49,24 @@ class QuoteMapperImplTests {
         expected._id = "123"
         expected.author = "Errolito Lopez"
         expected.body = "It is a fantastic energy, sir."
-        assertEquals(expected, quotesMapperImpl.mapEntityToModel(actual))
+        assertEquals(expected, quoteMapperImpl.mapEntityToModel(actual))
     }
 
     @Test
-    fun mapFormToModel_whenQuotesFormIsGiven_thenCorrect() {
-        val actual = QuoteForm()
-        actual.author = "Errolito Lopez"
-        actual.body = "It is a fantastic energy, sir."
+    fun mapFormToModel_whenQuoteFormIsGiven_thenCorrect() {
+        val actual = QuoteForm(
+                "Errolito Lopez",
+                "It is a fantastic energy, sir."
+        )
 
         val expected = Quote()
         expected.author = "Errolito Lopez"
         expected.body = "It is a fantastic energy, sir."
-        assertEquals(expected, quotesMapperImpl.mapFormToModel(actual))
+        assertEquals(expected, quoteMapperImpl.mapFormToModel(actual))
     }
 
     @Test
-    fun mapModelToResource_whenQuotesIsGiven_thenCorrect() {
-
+    fun mapModelToResource_whenQuoteIsGiven_thenCorrect() {
         val actual = Quote()
         actual._id = "123"
         actual.author = "Errolito Lopez"
@@ -77,6 +75,6 @@ class QuoteMapperImplTests {
         val expected = QuoteResource()
         expected.author = "Errolito Lopez"
         expected.body = "String"
-        assertEquals(expected, quotesMapperImpl.mapModelToResource(actual))
+        assertEquals(expected, quoteMapperImpl.mapModelToResource(actual))
     }
 }
