@@ -62,11 +62,10 @@ class QuoteController @Autowired constructor(
     @GetMapping("/all")
     @ResponseStatus(HttpStatus.OK)
     fun fetchPaginatedQuotes(@RequestParam(required = true, value = "page_num", defaultValue = "1") pageNum: Int,
-                             @RequestParam(required = true, value = "limit", defaultValue = "10") limit: Int,
-                             @RequestParam(required = false, value = "sort", defaultValue = "POPULARITY") sort: String
+                             @RequestParam(required = true, value = "limit", defaultValue = "10") limit: Int
     ): PageableModel<Quote> {
 
-        return fetchPaginatedQuotes.execute(sort, pageNum, limit)
+        return fetchPaginatedQuotes.execute(pageNum, limit)
     }
 
     @PatchMapping("/{id}")

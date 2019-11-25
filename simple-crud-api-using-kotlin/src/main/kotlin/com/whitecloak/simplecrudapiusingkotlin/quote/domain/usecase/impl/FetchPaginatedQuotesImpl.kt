@@ -14,7 +14,7 @@ class FetchPaginatedQuotesImpl @Autowired constructor(
         val quoteGateway: QuoteGateway
 ) : FetchPaginatedQuotes {
 
-    override fun execute(sort: String, pageNum: Int?, limit: Int?): PageableModel<Quote> {
+    override fun execute(pageNum: Int?, limit: Int?): PageableModel<Quote> {
 
         val pageable: Pageable = PageRequest.of(pageNum!!.minus(1), limit!!)
         val pageableQuotes = quoteGateway.fetchPageableQuotes(pageable)

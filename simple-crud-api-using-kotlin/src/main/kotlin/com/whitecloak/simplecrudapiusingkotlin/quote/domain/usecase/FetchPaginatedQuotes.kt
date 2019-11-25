@@ -5,5 +5,5 @@ import com.whitecloak.simplecrudapiusingkotlin.quote.domain.model.Quote
 
 interface FetchPaginatedQuotes {
 
-    fun execute(sort: String, pageNum: Int?, limit: Int?): PageableModel<Quote>
+    fun execute(pageNum: Int?, limit: Int?): PageableModel<Quote>
 }
