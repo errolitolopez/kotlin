@@ -8,9 +8,9 @@ import org.springframework.data.domain.Pageable
 
 interface QuoteGateway {
 
-    fun createOne(quoteEntity: QuoteEntity) : Quote
+    fun createOne(quoteEntity: QuoteEntity): Quote
     fun findOneById(id: String): Quote
     fun deleteOneById(id: String): DeleteQuote
-    fun findAllByAuthor(author: String) : List<Quote>
+    fun findAllByAuthor(author: String): List<Quote>
     fun fetchPageableQuotes(page: Pageable): Page<Quote>
 }
